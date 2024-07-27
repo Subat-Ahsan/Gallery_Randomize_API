@@ -1,0 +1,1 @@
+Get random image from folder on pc.
