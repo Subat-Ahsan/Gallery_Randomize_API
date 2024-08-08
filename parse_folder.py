@@ -16,7 +16,12 @@ class FileRenameTreeNode:
         string += "|"
             
         return string
-    
+
+"""
+Stores a numerical value for each subdirectory in a directory, as well as the 
+real name of the directory. Api gets numerical value, this structure is used
+to get the real path of file from numerical value.
+"""
 class FileRenameTree:
    
     def __init__(self, numberedMap = None):
@@ -39,11 +44,16 @@ class FileRenameTree:
             for child in current["children"]:
                 q.append((child,node.nodeMap[current["pos"]]))
             
-
+    """
+    Takes the integers representing the path in list form. Returns 
+    the corresponding path in the file explorer. Ignores empty numbers
+    and returns none if path is not made of integers, or can't be found.
+    """
     def retrieve(self,pathlist,get_count = False):
         currentNode = self.root
         string_list = []
         for i in pathlist:
+            if (i == ""): continue
             try:
                 num  = int(i)
             except:
@@ -54,6 +64,7 @@ class FileRenameTree:
                 string_list.append(currentNode.name)
             else:
                 return None
+        
         if (get_count):
             return (string_list, currentNode.count)
         else:
