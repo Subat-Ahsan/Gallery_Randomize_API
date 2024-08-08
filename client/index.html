@@ -15,16 +15,34 @@
   </div>
   <div class = "mainContainer">
     <div class="navbar">
+      <a href="#" onclick = "switchPage('page1')">Image</a>
       <a href = "#" onclick="fetchAndDisplayImage(['mainPageImage','fullScreenImage'])">Reload</a>
-      <a href="#">Image</a>
+      <a href="#">Gallery: <input type="checkbox" id="galleryToggle" onclick="galleryToggleFunction(this)"></a>
+      <a href="#">
+        <div style="display:flex; justify-content: center;">
+          <button onclick="updateImageWithNum(-1)">-</button>
+          <input type="number" id="imageNumber" value="1" min="1" disabled="true" >
+          <button onclick = "updateImageWithNum(1)">+</button>
+        </div>
+      </a>
+      <div class = "navbarSep"></div>
+      <a href="#" onclick = "switchPage('page2')">Filter</a>
+      <a href="#" onclick = "updateQueryString()">Update Filter</a>
+      <a href="#" onclick = "resetFilterSelection()">Reset Selection </a>
+      
+      
+      
     </div>
     <div class = "content">
-      <div class = "mainPage active">
+      <div class = "mainPage active contentPage" id = "page1">
         <img class = "image" id = "mainPageImage" alt=""></img>
+      </div>
+      <div class = "queryPage contentPage" id = "page2">
+      
       </div>
     </div>
   </div>
-    
+  <div class = "lowerBar"><span id = "lowerBarText">T</span></div>
 
 </body>
 
