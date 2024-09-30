@@ -89,4 +89,4 @@ Click the checkbox to enable. In gallery mode, go to next or previous image by c
 
 #### Filter Page
 The filter page allows users to select which subdirectories to include in image search. Selecting the top directory also selects all subdirectories within it. Click update filter button to apply the filters, and reset selection to unselect all subdirectories. If no subdirectories are selected, it doesn't send "dirs" parameter and api looks through all images. 
-
+![Screenshot 1](screenshots/s2.png)
